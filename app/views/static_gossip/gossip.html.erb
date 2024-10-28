@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Créer un potin</title>
+    <%= stylesheet_link_tag 'gossip', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+
+  <header>
+    <div class="menu">
+
+    <%= link_to "Home", static_pages_home_path, class: "lien" %>
+    <a class="lien">Gossip</a>
+    <%= link_to "Contact", static_contact_contact_path, class: "lien" %>
+    <%=  link_to "Team", static_team_team_path, class: "lien" %>
+
+    </div>
+  </header>
+
+
+ <div class="gossiphome">
+      <div class="headergossip">
+      <div class="imgusertext">
+      <%= image_tag "anonyme.png", class: "imguser", alt: "Image Anonyme" %>
+      <p class="infogossip"><%= @gossip.user.first_name %></p>
+      </div>
+
+
+
+      <p>#<%= @gossip.id %> </p>
+        </div>
+      <p class="textgossip"><%= @gossip.content %></p>
+    
+
+</div>
+
+
+
+
+
+</body>
+</html>
