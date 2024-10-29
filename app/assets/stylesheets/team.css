@@ -54,7 +54,8 @@ body {
     align-items: center;
     justify-content: center;
     background: linear-gradient(30deg, #ffffff,#ffffff, #636363, #999999, #ffffff);
-    -webkit-background-clip: text;
+    -webkit-background-clip: text; /* Utilisé pour appliquer le dégradé d'arrière-plan uniquement au texte sur les navigateurs basés sur WebKit (comme Chrome et Safari). Cela signifie que le dégradé sera visible à l'intérieur des lettres, créant un effet de texte coloré. */
+    background-clip: text; /* Propriété standard pour d'autres navigateurs compatibles (comme Firefox). Fonctionne de la même manière que le préfixe -webkit, permettant de voir le dégradé d'arrière-plan à travers le texte. */
     color: transparent;
     letter-spacing: -1px;
 }
