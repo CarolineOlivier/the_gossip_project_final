@@ -68,21 +68,36 @@ body {
 }
 
 h2 {
-    font-family: "Space Grotesk", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 450;
-    font-size: 110px;
-    letter-spacing: -13px;
-    font-style: normal;
-    background: linear-gradient(30deg, #ffffff, #ffffff,#ffffff, #909090,#ffffff, #7e7e7e, #ffffff, #FFFFFF, #ffffff);
-    -webkit-background-clip: text;
-    color: transparent;
-    line-height: 0.9;
-    align-items: center;
-    margin-bottom: 0;
-    text-align: center;
-    padding-bottom: 10px;
-}
+    font-family: "Space Grotesk", sans-serif; /* Définit la police utilisée pour le texte h2 */
+    font-optical-sizing: auto; /* Active la mise à l'échelle optique */
+    font-weight: 450; /* Définit l'épaisseur de la police */
+    font-size: 36px; /* Spécifie la taille du texte */
+    letter-spacing: -1px; /* Ajuste l'espacement entre les lettres */
+    font-style: normal; /* Indique que le texte ne doit pas être en italique */
+    
+    /* Dégradé pour un effet métallique plus foncé */
+    background: linear-gradient(90deg, 
+        #ffffff,      /* Blanc très clair (reflet) */
+        #e0e0e0,      /* Gris clair */
+        #c0c0c0,      /* Gris argenté */
+        #a0a0a0,      /* Gris légèrement plus foncé */
+        #909090,      /* Gris moyen */
+        #777777       /* Gris un peu plus foncé pour plus de profondeur */
+    );
+    -webkit-background-clip: text; /* Clippe l'arrière-plan au texte */
+    background-clip: text; /* Propriété standard pour les autres navigateurs compatibles */
+    color: transparent; /* Rend la couleur du texte transparente pour voir le dégradé */
+
+    line-height: 1.2; /* Définit une hauteur de ligne standard pour une meilleure lisibilité */
+    margin-bottom: 0; /* Supprime l'espacement en bas de l'élément h2 */
+    text-align: center; /* Centre le texte horizontalement */
+    padding-bottom: 10px; /* Ajoute un espacement en bas de l'élément */
+
+    /* Ajout d'une légère ombre pour un effet de brillance */
+    text-shadow: 
+        0 0 1px rgba(255, 255, 255, 0.6), /* Ombre blanche pour un effet de brillance */
+        0 0 3px rgba(192, 192, 192, 0.5); /* Ombre argentée pour ajouter de la profondeur */
+    }
 
 .gossiphome {
     background-color: rgb(11, 11, 11);
@@ -159,4 +174,61 @@ h2 {
 }
 
 
+
+/* ajouts par  caroline */
+.team-title {
+    text-align: center; /* Centre le texte */
+    font-size: 36px; /* Ajuste la taille  */
+    font-weight: bold; /* Rendre le texte en gras (facultatif) */
+    margin-top: 20px; /* Ajoute un espacement au-dessus, si nécessaire */
+    text-shadow: 
+    0 0 15px rgba(192, 192, 192, 0.7); /* Halo avec 70% */
+}
+
+.team-member p {
+    text-align: center; /* Centre le texte des commentaires */
+    font-size:18px; /* Agrandit la taille du texte */
+}
+
+.team-message {
+    text-align: center; /* Centre le texte */
+    margin-top: 35px; /* Ajoute un espacement au-dessus*/
+    font-size: 20px; /* Agrandit la taille du texte */
+    font-weight: bold; /* Rend le texte en gras*/
+    background: linear-gradient(90deg, #e0e0e0, #b0b0b0, #808080); /* Dégradé de gris clair à foncé */
+    -webkit-background-clip: text; /* Clippe l'arrière-plan au texte (pour les navigateurs basés sur WebKit) */
+    background-clip: text; /* Propriété standard pour les autres navigateurs compatibles */
+    color: transparent; /* Rend la couleur du texte transparente, permettant au dégradé d'apparaître */
+}
+
+
+.card {
+    background-color: rgba(0, 0, 0, 0.5); /* Fond transparent */
+    color: #FFFFFF; /* Couleur du texte */
+    border: 2px solid rgba(192, 192, 192, 0.8); /* Contour gris métallique */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 20px; /* Espacement interne */
+    margin: 20px auto; /* Espacement extérieur, centré */
+    width: 90%; /* Largeur de la carte */
+    max-width: 500px; /* Largeur maximale */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Ombre pour donner de la profondeur */
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s; /* Transition douce pour la couleur, l'ombre et le zoom */
+}
+
+.card:hover {
+    border-color: rgba(24, 21, 122, 0.8); /* Change la couleur du contour lors du survol */
+    box-shadow: 0 0 20px rgba(14, 11, 100, 0.8), 0 0 30px rgba(14, 11, 100, 0.8); /* Halo lumineux avec la couleur choisie */
+    transform: scale(1.05); /* Zoom de 5% sur la carte */
+}
+
+.card h2 {
+    margin-top: 0; /* Supprime la marge supérieure */
+    font-size: 28px; /* Taille du titre de la carte */
+    text-align: center; /* Centre le titre */
+}
+
+.card p {
+    font-size: 18px; /* Taille de la description */
+    line-height: 1.5; /* Hauteur de ligne pour une meilleure lisibilité */
+}
 

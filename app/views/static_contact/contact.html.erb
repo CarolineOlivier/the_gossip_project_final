@@ -1,21 +1,28 @@
 <html>
   <head>
-    <title>Créer un potin</title>
+    <title>Contactez-nous</title>
     <%= stylesheet_link_tag 'contact', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
 
   <header>
     <div class="menu">
-
-    <%= link_to "Home", static_pages_home_path, class: "lien" %>
-    <%= link_to "Contact", static_contact_contact_path, class: "lien" %>
-    <%=  link_to "Team", static_team_team_path, class: "lien" %>
-
+      <%= link_to "Home", "/static_pages/home", class: "lien" %>
+      <%= link_to "Contact", "/static_contact/contact", class: "lien" %>
+      <%= link_to "Team", "/static_team/team", class: "lien" %>
     </div>
   </header>
 
-  
-
-</body>
+  <main>
+  <main>
+  <div class="contact-content">
+    <h1>Nous Contacter</h1>
+    <p>Pour toute demande, vous pouvez nous joindre à l'adresse suivante : <strong>contact@gossipproject.com</strong>.</p>
+    <div style="margin: 50px 0;"></div> <!-- Saut de ligne avec espacement -->
+    <p>Nous restons à votre disposition pour toute information.</p>
+  </div>
+</main>
+  </body>
 </html>
+
+

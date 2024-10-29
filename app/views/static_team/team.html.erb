@@ -2,61 +2,71 @@
   <head>
     <title>Notre équipe</title>
     <%= stylesheet_link_tag 'team', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
   <body>
+    <header>
+      <div class="menu">
+        <%= link_to "Home", static_pages_home_path, class: "lien" %>
+        <%= link_to "Contact", static_contact_contact_path, class: "lien" %>
+        <%= link_to "Team", static_team_team_path, class: "lien" %>
+      </div>
+    </header>
 
-  <header>
-    <div class="menu">
+    <main>
+      <h1 class="team-title">Rencontrez notre équipe</h1>
 
-    <%= link_to "Home", static_pages_home_path, class: "lien" %>
-    <%= link_to "Contact", static_contact_contact_path, class: "lien" %>
-    <%=  link_to "Team", static_team_team_path, class: "lien" %>
+      <div class="team-member">
+        <div class="card">
+          <h2>Florian T</h2>
+          <p>Notre expert en CSS, qui manie son code tel un peintre armé de son pinceau !
+          <br>
+          Avec lui, chaque ligne de style ajoute une touche de magie, 
+          transformant la toile du front-end en un design inspiré
+          <br>
+          (et ça, sans même invoquer Bootstrap) !</p>
+        </div>
+      </div>
 
-    </div>
-  </header>
+      <div class="team-member">
+        <div class="card">
+          <h2>Florian E</h2>
+          <p>Maître des bases de données, il s'assure que chaque potin est bien gardé dans les entrailles de PostgreSQL.
+          <br>
+           Parmi nos potins du jour, on raconte que Florian E. a perfectionné son doigté tel un pianiste,
+            à force de taper frénétiquement des lignes de code, 
+            encouragé avec enthousiasme par Charlie et Florian T., 
+            qui l’ont placé aux commandes de notre session Live Share.</p>
+        </div>
+      </div>
 
-  <main>
-    <h1>Rencontrez notre équipe</h1>
+      <div class="team-member">
+        <div class="card">
+          <h2>Caroline</h2>
+          <p>Sous les conseils avisés de Florian T., Caroline rêve d' insuffler à chaque page un petit côté irrésistible,
+          <br>
+           et tout ça, uniquement en CSS ! 
+           <br>
+          
+          Caroline a un faible pour les ambiances tamisées : 
+          <br>
+          si une page ne se révèle pas dans l'obscurité, 
+          <br>
+          c’est qu’elle n’est pas encore prête à dévoiler tous ses charmes.</p>
+        </div>
+      </div>
 
-    <div class="team-member">
-    <h2>Florian T</h2>
-    <p>Notre expert en CSS, qui manie son code tel un peintre armé de son pinceau !
-    <p>Avec lui, chaque ligne de style ajoute une touche de magie, 
-    transformant la toile du front-end en un design inspiré (et ça, sans même invoquer Bootstrap) !
-    </p>
+      <div class="team-member">
+        <div class="card">
+          <h2>Charlie</h2>
+          <p>Charlie, éclaireur bienveillant et explorateur aguerri dans les contrées de VS Code, 
+          <br>
+          sous son œil vigilant, même les lignes les plus capricieuses se laissent apprivoiser.</p>
+        </div>
+      </div>
 
-  </div>
-
-  <div class="team-member">
-    <h2>Florian E</h2>
-    <p>Maître des bases de données, il s'assure que chaque potin est bien gardé dans les entrailles de PostgreSQL.
-     Parmi nos potins du jour, on raconte que Florian E. a perfectionné son doigté tel un pianiste,
-    à force de taper frénétiquement des lignes de code, encouragé avec enthousiasme par Charlie et Florian T., 
-    qui l’ont placé aux commandes de notre session Live Share.</p>
-  </div>
-
-  <div class="team-member">
-    <h2>Caroline</h2>
-    <p>Sous les conseils avisés de Florian T., Caroline rêve de rendre ses designs aussi élégants que les siens. 
-    Son objectif à terme ? Insuffler à chaque page un petit côté irrésistible, et tout ça, uniquement en CSS !</p>
-    Caroline a un faible pour les ambiances tamisées : si une page ne se révèle pas dans l'obscurité, 
-    c’est qu’elle n’est pas encore prête à dévoiler tous ses charmes.
-    </p>
-   
-
-  div class="team-member">
-    <h2>Charlie</h2>
-    <p>Charlie, éclaireur bienveillant et explorateur aguerri dans les contrées de VS Code, 
-    Sous son œil vigilant, même les lignes les plus capricieuses se laissent apprivoiser.
-    </p>
-
-  </div>
-  
-
-</p>
-  </div>
-    <p class="team-message">Ensemble, nous formons l'équipe de The Gossip Project, prête à partager le meilleur des potins, pour le plaisir des curieux ! 😇</p>
-  </main>
-
+      <p class="team-message">Ensemble, nous formons l'équipe de The Gossip Project, prête à partager le meilleur des potins, pour le plaisir des curieux ! 😇</p>
+    </main>
   </body>
 </html>

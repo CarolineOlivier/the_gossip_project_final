@@ -158,5 +158,13 @@ h2 {
     margin-top: 10px;
 }
 
+.contact-content {
+    text-align: center; /* Centre le texte à l'intérieur de ce conteneur */
+}
+
+.contact-content h1 {
+    font-size: 36px; /* Ajuste la taille du titre  */
+    margin-bottom: 230px; /* Ajoute un espacement en bas du titre  */
+}
 
 
