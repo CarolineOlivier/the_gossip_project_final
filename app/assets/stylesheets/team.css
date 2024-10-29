@@ -202,6 +202,13 @@ h2 {
 }
 
 
+/* Styles pour l'emoji */
+.emoji {
+    color: #FFFFFF; /* Définit la couleur de l'emoji, ici en blanc */
+    font-size: 20px; /* Ajuste la taille de l'emoji si nécessaire */
+    display: inline; /* S'assure que l'emoji reste dans le flux du texte */
+}
+
 .card {
     background-color: rgba(0, 0, 0, 0.5); /* Fond transparent */
     color: #FFFFFF; /* Couleur du texte */
