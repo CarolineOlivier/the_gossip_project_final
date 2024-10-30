@@ -1,0 +1,32 @@
+<h1>Créer un nouveau potin</h1>
+
+<%= form_with(url: gossips_path, method: :post) do |form| %>
+  <!-- Champ de saisie pour le titre du potin -->
+  <div>
+    <%= form.label :title, "Titre du potin" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <!-- Champ de saisie pour le contenu du potin -->
+  <div>
+    <%= form.label :content, "Contenu du potin" %>
+    <%= form.text_area :content %>
+  </div>
+
+  <!-- Bouton pour soumettre le formulaire -->
+  <div>
+    <%= form.submit "Créer le potin" %>
+  </div>
+<% end %>
+
+<!-- Affiche les erreurs si elles existent -->
+<% if @gossip && @gossip.errors.any? %>
+  <div>
+    <h2>Erreur lors de la création du potin :</h2>
+    <ul>
+      <% @gossip.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

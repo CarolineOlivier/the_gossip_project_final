@@ -48,6 +48,7 @@ rails db:seed
 rails server
 ```
 Accède ensuite à l'application en ouvrant http://127.0.0.1:3000/static_pages/home dans ton navigateur.
+http://127.0.0.1:3000/static_welcome/welcome/hide permet d'accéder à une page Wlecome cachée.
 
 ## Utilisation
 

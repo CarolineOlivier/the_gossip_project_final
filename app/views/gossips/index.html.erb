@@ -1,0 +1,15 @@
+<!-- app/views/gossips/index.html.erb -->
+<h1>Liste des Potins</h1>
+<ul>
+  <% @gossips.each do |gossip| %>
+    <li>
+      <strong><%= gossip.title %></strong> : <%= gossip.content %>
+      
+      <!-- Formulaire pour supprimer le potin -->
+      <%= form_with url: gossip_path(gossip), method: :delete, local: true do %>
+        <%= submit_tag "Supprimer", data: { confirm: "Êtes-vous sûr de vouloir supprimer ce potin ?" } %>
+      <% end %>
+      
+    </li>
+  <% end %>
+</ul>
