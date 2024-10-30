@@ -183,9 +183,14 @@ h2 {
     font-size: 36px; /* Ajuste la taille  */
     font-weight: bold; /* Rendre le texte en gras (facultatif) */
     margin-top: 20px; /* Ajoute un espacement au-dessus, si nécessaire */
-    text-shadow: 
-    0 0 15px rgba(192, 192, 192, 0.7); /* Halo avec 70% */
-}
+    background: linear-gradient(90deg, #ffffff, #e0e0e0, #c0c0c0, #a0a0a0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    padding-bottom: 10px;
+    }
+
 
 .team-member p {
     text-align: center; /* Centre le texte des commentaires */
