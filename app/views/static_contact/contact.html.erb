@@ -1,28 +1,33 @@
-<html>
-  <head>
-    <title>Contactez-nous</title>
-    <%= stylesheet_link_tag 'contact', media: 'all', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body>
+<%= stylesheet_link_tag 'contact', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-  <header>
-    <div class="menu">
-      <%= link_to "Home", "/static_pages/home", class: "lien" %>
-      <%= link_to "Contact", "/static_contact/contact", class: "lien" %>
-      <%= link_to "Team", "/static_team/team", class: "lien" %>
-    </div>
-  </header>
+<h1>Nous Contacter</h1>
 
-  <main>
-  <main>
-  <div class="contact-content">
-    <h1>Nous Contacter</h1>
-    <p>Pour toute demande, vous pouvez nous joindre à l'adresse suivante : <strong>contact@gossipproject.com</strong>.</p>
-    <div style="margin: 50px 0;"></div> <!-- Saut de ligne avec espacement -->
-    <p>Nous restons à votre disposition pour toute information.</p>
+<p>Pour toute demande, vous pouvez nous joindre à l'adresse suivante : 
+    <a href="mailto:contact@gossipproject.com" class="contact-link">contact@gossipproject.com</a>.
+</p>
+
+<%= form_with(url: "/static_contact/contact", method: :post, class: "contact-form") do |form| %>
+  <!-- Champ pour le nom -->
+  <div class="form-group">
+    <%= form.label :name, "Nom" %>
+    <%= form.text_field :name, class: "form-input" %>
   </div>
-</main>
-  </body>
-</html>
 
+  <!-- Champ pour l'email -->
+  <div class="form-group">
+    <%= form.label :email, "Email" %>
+    <%= form.email_field :email, class: "form-input" %>
+  </div>
+
+  <!-- Zone de texte pour le message -->
+  <div class="form-group">
+    <%= form.label :message, "Message" %>
+    <%= form.text_area :message, class: "form-textarea" %>
+  </div>
+
+  <!-- Bouton d'envoi -->
+  <div class="form-group">
+    <%= form.submit "Envoyer", class: "btn-submit" %>
+  </div>
+<% end %>
 

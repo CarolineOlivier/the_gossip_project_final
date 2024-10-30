@@ -14,8 +14,18 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "gossip", media: "all", "data-turbo-track": "reload" %>
   </head>
 
+  <header>
+  <div class="menu">
+  <%= link_to "Home", static_pages_home_path, class: "lien" %>
+  <%= link_to "Contact", static_contact_contact_path, class: "lien" %>
+  <%= link_to "Team", static_team_team_path, class: "lien" %>
+  <%= link_to "Liste des potins", gossips_path, class: "lien" %>
+  <%= link_to "Créer un potin", new_gossip_path, class: "lien" %>
+</div>
+  </header>
   <body data-turbo="false">
     <!-- Affiche une alerte de succès si un message de notice est présent -->
     <% if flash[:notice] %>

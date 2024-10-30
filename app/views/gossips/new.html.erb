@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag 'new', media: 'all', 'data-turbolinks-track': 'reload' %>
 <h1>Créer un nouveau potin</h1>
 
 <%= form_with(url: gossips_path, method: :post) do |form| %>
@@ -15,13 +16,13 @@
 
   <!-- Bouton pour soumettre le formulaire -->
   <div>
-    <%= form.submit "Créer le potin" %>
+    <%= form.submit "Créer le potin", class: "btn-submit" %>
   </div>
 <% end %>
 
 <!-- Affiche les erreurs si elles existent -->
 <% if @gossip && @gossip.errors.any? %>
-  <div>
+  <div class="error-messages"> <!-- Ajout de la classe error-messages -->
     <h2>Erreur lors de la création du potin :</h2>
     <ul>
       <% @gossip.errors.full_messages.each do |message| %>

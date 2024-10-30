@@ -1,15 +1,26 @@
-<!-- app/views/gossips/index.html.erb -->
-<h1>Liste des Potins</h1>
-<ul>
-  <% @gossips.each do |gossip| %>
-    <li>
-      <strong><%= gossip.title %></strong> : <%= gossip.content %>
-      
-      <!-- Formulaire pour supprimer le potin -->
-      <%= form_with url: gossip_path(gossip), method: :delete, local: true do %>
-        <%= submit_tag "Supprimer", data: { confirm: "Êtes-vous sûr de vouloir supprimer ce potin ?" } %>
-      <% end %>
-      
-    </li>
-  <% end %>
-</ul>
+<head>
+  <title>Liste des Potins</title>
+  <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <h1 class="page-title">Liste des Potins</h1>
+
+  <ul class="gossip-list">
+    <% @gossips.each do |gossip| %>
+      <li class="gossip-item">
+        <div class="gossip-content">
+          <strong class="gossip-title"><%= gossip.title %></strong> : <span class="gossip-text"><%= gossip.content %></span>
+        </div>
+        
+        <!-- Boutons pour voir et supprimer le potin -->
+        <div class="button-group">
+          <%= link_to "Voir", gossip_path(gossip), class: "view-button" %>
+          <%= form_with url: gossip_path(gossip), method: :delete, local: true do %>
+            <%= submit_tag "Supprimer", class: "delete-button", data: { confirm: "Êtes-vous sûr de vouloir supprimer ce potin ?" } %>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</body>

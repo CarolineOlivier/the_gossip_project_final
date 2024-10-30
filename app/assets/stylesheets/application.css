@@ -1,0 +1,37 @@
+.menu { 
+    width: 50%; /* Définit la largeur de la barre de navigation à 50% de la largeur de l'écran */
+    height: 45px; /* Hauteur de la barre de navigation */
+    background-color: rgb(11, 11, 11); /* Couleur de fond de la barre de navigation en noir */
+    border: 0.5px solid rgb(30, 30, 30); /* Bordure fine de couleur gris foncé autour de la barre */
+    border-radius: 15px; /* Arrondit les coins de la barre de navigation */
+    display: flex; /* Utilise flexbox pour aligner les éléments de la barre */
+    justify-content: space-around; /* Espacement égal entre chaque lien dans la barre */
+    align-items: center; /* Aligne verticalement les liens au centre de la barre */
+    margin-left: auto; /* Centre la barre horizontalement en combinaison avec margin-right */
+    margin-right: auto;
+    box-shadow: 0px 10px 100px #0058fc61; /* Ombre autour de la barre, avec une légère lueur bleue */
+    opacity: 0; /* Rend la barre initialement invisible pour appliquer un effet de transition */
+    animation: fadeInUpmenu 1s ease-out forwards; /* Animation pour faire apparaître la barre avec un effet de transition */
+}
+
+.lien {
+    color: #FFFFFF; /* Couleur du texte en blanc */
+    text-decoration: none; /* Supprime le soulignement des liens */
+    padding: 5px 15px; /* Espace intérieur autour du texte pour le rendre plus lisible */
+    background: linear-gradient(30deg, #e8e8e8, #ffffff, #b0b0b0, #ffffff); /* Applique un dégradé de couleurs claires au texte pour un effet de métal */
+    -webkit-background-clip: text; /* Applique le dégradé uniquement au texte dans les navigateurs WebKit */
+    background-clip: text; /* Applique le dégradé uniquement au texte dans les autres navigateurs */
+    color: transparent; /* Rend la couleur du texte transparente pour faire ressortir le dégradé */
+    font-weight: bold; /* Met le texte en gras */
+    letter-spacing: -1px; /* Réduit l’espacement entre les lettres */
+    transition: color 0.3s ease, background-color 0.3s ease, filter 0.3s ease; /* Applique des transitions douces lors des changements de couleur, de fond et de filtre */
+}
+
+/* Effet de surbrillance au survol */
+.lien:hover {
+    background-color: rgba(255, 255, 255, 0.25); /* Applique un fond semi-transparent sous le texte au survol */
+    border-radius: 8px; /* Arrondit légèrement le fond de l'effet de surbrillance */
+    filter: brightness(1.8) saturate(1.6) hue-rotate(200deg); /* Augmente la luminosité, saturation, et applique une teinte bleutée pour l’effet de surbrillance */
+    text-shadow: 0 0 8px rgba(173, 216, 230, 0.7), 0 0 15px rgba(135, 206, 235, 0.6); /* Ajoute une lueur bleutée autour du texte pour renforcer l'effet au survol */
+}
+

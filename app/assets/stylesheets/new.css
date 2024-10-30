@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ffffff, #e0e0e0, #c0c0c0, #a0a0a0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    padding-bottom: 10px;
+}
+
+form div {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #b0b0b0;
+    background: linear-gradient(30deg, #ffffff, #636363, #999999);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+form input[type="text"],
+form textarea {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 16px;
+    color: #FFFFFF;
+    background-color: rgb(18, 18, 18);
+    border: 1px solid rgb(30, 30, 30);
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+form input[type="text"]::placeholder,
+form textarea::placeholder {
+    color: #888888;
+}
+
+form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Style pour le bouton Créer le potin */
+.btn-submit {
+    font-size: 18px;
+    color: #FFFFFF;
+    background-color: rgb(30, 30, 30); /* Gris sombre pour correspondre aux zones d'écriture */
+    border: 2px solid rgb(60, 60, 60); /* Légèrement plus clair pour le contour */
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    width: 200px;
+    display: block;
+    margin: 20px auto;
+    font-weight: bold;
+}
+
+.btn-submit:hover {
+    background-color: rgb(50, 50, 50); /* Gris plus clair au survol */
+    border-color: rgb(80, 80, 80); /* Accentue le contour au survol */
+    box-shadow: 0 0 10px rgba(80, 80, 80, 0.6);
+    transform: scale(1.05);
+}
+
+
+/* Erreurs */
+.error-messages {
+    background-color: rgba(105, 105, 105, 0.2); /* Gris légèrement transparent */
+    border: 1px solid rgba(169, 169, 169, 0.6); /* Gris plus clair pour le contour */
+    padding: 15px;
+    border-radius: 8px;
+    color: #FFFFFF;
+    margin-top: 20px;
+    width: 80%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; /* Alignement à gauche pour éviter la déformation */
+}
+
+.error-messages h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #D3D3D3; /* Gris clair */
+    margin-bottom: 10px;
+    text-transform: none; /* Assure que le texte reste normal */
+    letter-spacing: 1.5px; /* Espace entre les lettres pour un effet plus aéré */
+}
+
+.error-messages ul {
+    padding-left: 20px;
+}
+
+.error-messages ul li {
+    font-size: 16px;
+    color: #C0C0C0; /* Gris métallique pour le texte des erreurs */
+    line-height: 1.5; /* Espace les lignes pour une meilleure lisibilité */
+}
+
+

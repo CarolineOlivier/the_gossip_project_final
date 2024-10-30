@@ -12,6 +12,7 @@ body {
 .motgris {
     background: linear-gradient(30deg, #ffffff,#ffffff, #636363, #999999, #ffffff);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
     
 }
@@ -224,8 +225,8 @@ h2 {
 }
 
 .card:hover {
-    border-color: rgba(24, 21, 122, 0.8); /* Change la couleur du contour lors du survol */
-    box-shadow: 0 0 20px rgba(14, 11, 100, 0.8), 0 0 30px rgba(14, 11, 100, 0.8); /* Halo lumineux avec la couleur choisie */
+    border-color: rgba(6, 4, 74, 0.716); /* Change la couleur du contour lors du survol */
+    box-shadow: 0 0 20px rgba(5, 1, 115, 0.8), 0 0 30px rgba(1, 16, 67, 0.501); /* Halo lumineux avec la couleur choisie */
     transform: scale(1.05); /* Zoom de 5% sur la carte */
 }
 

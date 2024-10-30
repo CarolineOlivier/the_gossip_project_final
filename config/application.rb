@@ -23,5 +23,8 @@ module TheGossipProjectFinal
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Définir la langue par défaut en français
+    config.i18n.default_locale = :fr
   end
 end

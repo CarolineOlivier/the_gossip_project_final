@@ -1,170 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;1,100&family=Space+Grotesk:wght@300..700&display=swap');
 
 body {
     background-color: #000000;
     color: #FFFFFF;
     font-family: "Space Grotesk", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
 }
 
-.motgris {
-    background: linear-gradient(30deg, #ffffff,#ffffff, #636363, #999999, #ffffff);
-    -webkit-background-clip: text;
-    color: transparent;
-    
-}
-
-
-.menu {
-    width: 50%;
-    height: 45px;
-    background-color: rgb(11, 11, 11);
-    border: 0.5px solid rgb(30, 30, 30);
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0px 10px 100px #0058fc61;
-    opacity: 0;
-    animation: fadeInUpmenu 1s ease-out forwards;
-}
-
-@keyframes fadeInUpmenu {
-    0% {
-        opacity: 0;
-        transform: translateY(-80px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-}
-
-.lien {
-    color: #FFFFFF;
-    margin-left: 10px;
-    text-decoration: none;
-    height: 30px;
-    width: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(30deg, #ffffff,#ffffff, #636363, #999999, #ffffff);
-    -webkit-background-clip: text;
-    color: transparent;
-    letter-spacing: -1px;
-}
-
-.lien:nth-child(2) {
-    color: #FFFFFF;
-}
-
-.lien:active {
-    transform: scale(0.97);
-}
-
-h2 {
-    font-family: "Space Grotesk", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 450;
-    font-size: 110px;
-    letter-spacing: -13px;
-    font-style: normal;
-    background: linear-gradient(30deg, #ffffff, #ffffff,#ffffff, #909090,#ffffff, #7e7e7e, #ffffff, #FFFFFF, #ffffff);
-    -webkit-background-clip: text;
-    color: transparent;
-    line-height: 0.9;
-    align-items: center;
-    margin-bottom: 0;
+h1 {
+    font-size: 36px;
     text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ffffff, #e0e0e0, #c0c0c0, #a0a0a0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
     padding-bottom: 10px;
 }
 
-.gossiphome {
-    background-color: rgb(11, 11, 11);
-    border: 0.5px solid rgb(30, 30, 30);
-    height: 240px;
-    width: 800px;
-    list-style: none;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 20px;
-    margin-top: 50px;
+p {
+    text-align: center;
+    font-size: 18px;
+    color: #b0b0b0;
+    margin-bottom: 20px;
 }
 
-.headergossip {
-    display: flex;
-    align-items: center;
-    height: 30px;
-    justify-content: space-between;
-    padding-left: 40px;
-    padding-right: 40px;
-    font-size: 20px;
-    margin-top: 30px;
-    letter-spacing: -1px;
-}
-
-.textgossip {
-    color: #FFFFFF;
-    text-decoration: none;
-    text-decoration: none;
-    font-size: 20px;
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
     background-color: rgb(18, 18, 18);
-    height: 70px;
-    border-radius: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    padding-left: 20px;
-    padding-top: 20px;
-    letter-spacing: -1px;
+    border: 1px solid rgb(30, 30, 30);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.infogossip {
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-.btn {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 30px;
-    padding-left: 30px;
-    margin-left: 660px;
-    margin-right: 20px;
-    text-decoration: none;
-    background-color: #141414;
-    border: 0.5px solid rgb(30, 30, 30);
+.form-group {
+    margin-bottom: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 18px;
+    color: #b0b0b0;
+    background: linear-gradient(30deg, #ffffff, #636363, #999999);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 8px;
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
     color: #FFFFFF;
-    border-radius: 20px;
-    width: 60px;
-    letter-spacing: -1px;
+    background-color: rgb(18, 18, 18);
+    border: 1px solid rgb(30, 30, 30);
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-.imgusertext {
-    display: flex;
+.form-textarea {
+    min-height: 100px;
+    resize: vertical;
 }
 
-.imguser {
-    width: 40px;
-    height: 40px;
-    margin-top: 10px;
+.form-input::placeholder, .form-textarea::placeholder {
+    color: #888888;
 }
 
-.contact-content {
-    text-align: center; /* Centre le texte à l'intérieur de ce conteneur */
+/* Style pour le lien de contact */
+.contact-link {
+    color: #4A90E2; /* Bleu doux */
+    text-decoration: none; /* Retire le soulignement */
+    transition: color 0.3s ease; /* Transition douce au survol */
 }
 
-.contact-content h1 {
-    font-size: 36px; /* Ajuste la taille du titre  */
-    margin-bottom: 230px; /* Ajoute un espacement en bas du titre  */
+.contact-link:hover {
+    color: #347ABD; /* Bleu un peu plus foncé au survol */
 }
 
+/* Styles pour le bouton "Envoyer" de la page de contact */
+.btn-submit {
+    font-size: 18px;
+    color: #FFFFFF;
+    background: linear-gradient(30deg, #555555, #777777, #999999); /* Couleurs gris métallisé */
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    width: 200px;
+    display: block;
+    margin: 20px auto;
+    font-weight: bold;
+}
+
+.btn-submit:hover {
+    box-shadow: 0 0 15px rgba(200, 200, 200, 0.6); /* Effet de lueur pour le survol */
+}
 
