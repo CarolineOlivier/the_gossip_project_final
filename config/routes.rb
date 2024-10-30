@@ -12,10 +12,11 @@ Rails.application.routes.draw do
   # Le paramètre ":hide" est dynamique et peut être utilisé pour gérer l'affichage de certains éléments sur la page.
   # La requête est dirigée vers l'action "welcome" dans le contrôleur "StaticWelcomeController".
 
-  get "static_gossip/gossip/:id", to: 'static_gossip#gossip'
-  # Cette route permet d'afficher une page de gossip (potin) spécifique avec l'ID donné.
-  # ":id" est un paramètre dynamique qui représente l'identifiant du potin.
-  # L'action "gossip" dans "StaticGossipController" gère cette route.
+  #  route personnalisée pour static_gossip :
+get 'static_gossip/gossip/:id', to: 'static_gossip#gossip', as: 'static_gossip'
+# l'option as: 'static_gossip', définit un alias pour cette route.
+#En utilisant as: 'static_gossip', on peut  faire référence à cette route plus facilement dans le code, 
+#en utilisant static_gossip_path dans les vues ou contrôleurs pour générer l'URL.
 
   get "static_contact/contact"
   # Cette route affiche une page de contact statique en utilisant l'action "contact" dans "StaticContactController".
@@ -49,9 +50,18 @@ Rails.application.routes.draw do
   # Cette ligne est commentée, mais elle définirait la page d'accueil de l'application avec la méthode "root".
   # Ici, elle serait liée à l'index du contrôleur "PostsController".
 
-  resources :gossips
+  #ajout de commentaires : 
+  post 'static_gossip/gossip/:id/comments', to: 'static_gossip#create_comment', as: 'static_gossip_comments'
+  
+
+  resources :gossips do
+    resources :comments, only: [:create, :destroy]
+  end
+  
+resources :gossips
   # Cette ligne crée automatiquement toutes les routes RESTful (index, show, new, edit, create, update, destroy) pour le modèle "Gossip".
   # Elle dirige ces actions vers "GossipsController", ce qui simplifie la gestion des requêtes CRUD pour ce modèle.
+  #Ce code imbrique les routes de comments sous gossips, ce qui signifie qu'un commentaire est lié à un gossip spécifique.
 end
 
 

@@ -12,7 +12,7 @@ class GossipsController < ApplicationController
 
     if @gossip.save
       # Redirige vers la page d'accueil après la création
-      redirect_to static_pages_home_path, notice: "Le potin a été créé avec succès !"
+      redirect_to gossips_path, notice: "Le potin a été créé avec succès !"
     else
       # Si la création échoue, recharge la page de création
       render :new
@@ -29,17 +29,5 @@ class GossipsController < ApplicationController
   def show
     # Récupère le potin grâce à son ID et le stocke dans @gossip pour l'afficher dans la vue
     @gossip = Gossip.find(params[:id])
-  end
-
-  # Méthode pour supprimer un potin
-  def destroy
-    @gossip = Gossip.find(params[:id])
-
-    # Supprime le potin et redirige vers l'index avec un message de confirmation
-    if @gossip.destroy
-      redirect_to static_pages_home_path, notice: "Le potin a été supprimé avec succès !" # Modification pour rediriger vers l'accueil après suppression
-    else
-      redirect_to static_pages_home_path, alert: "Une erreur s'est produite lors de la suppression." # Modification pour rediriger vers l'accueil en cas d'erreur
-    end
   end
 end

@@ -4,3 +4,22 @@
 <p><strong>Auteur :</strong> <%= @gossip.user.first_name %> <%= @gossip.user.last_name %></p>
 
 <%= link_to 'Retour à la liste des potins', gossips_path %>
+
+<h2>Commentaires</h2>
+<% @gossip.comments.each do |comment| %>  
+  <div class="comment">
+    <p><strong><%= comment.user ? comment.user.first_name : "Anonyme" %>:</strong> <%= comment.content %></p>
+  </div>
+<% end %>
+
+<h3>Ajouter un commentaire</h3>
+<%= form_with(model: [@gossip, Comment.new], local: true) do |form| %>
+  <div>
+    <%= form.label :content, "Votre commentaire" %>
+    <%= form.text_area :content %>
+  </div>
+  <div>
+    <%= form.submit "Ajouter le commentaire" %>
+  </div>
+<% end %>
+

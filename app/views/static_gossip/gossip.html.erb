@@ -1,19 +1,47 @@
 <html>
   <head>
-    <title>Créer un potin</title>
+    <title>Potin Détail</title>
     <%= stylesheet_link_tag 'gossip', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-      <div class="gossiphome">
+    <div class="gossiphome">
       <div class="headergossip">
-      <div class="imgusertext">
-      <%= image_tag "anonyme.png", class: "imguser", alt: "Image Anonyme" %>
-      <p class="infogossip"><%= @gossip.user.first_name %></p>
-      </div>
-
-      <p>#<%= @gossip.id %> </p>
+        <div class="imgusertext">
+          <%= image_tag "anonyme.png", class: "imguser", alt: "Image Anonyme" %>
+          <p class="infogossip"><%= @gossip.user.first_name %></p>
         </div>
+        <p>#<%= @gossip.id %> </p>
+      </div>
       <p class="textgossip"><%= @gossip.content %></p>
+    </div>
+
+    <!-- Section des commentaires -->
+    <div class="comments-section">
+      <h2 class="comments-title">Commentaires</h2>
+
+      <!-- Boucle pour afficher chaque commentaire -->
+      <% @comments.each do |comment| %>
+        <div class="comment">
+          <p><strong><%= comment.user.first_name %> :</strong> <%= comment.content %></p>
+          <!-- Bouton de suppression avec confirmation, visible uniquement sur la page de détails -->
+          <%= button_to "Supprimer", gossip_comment_path(comment.gossip, comment), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer ce commentaire ?" }, class: "btn delete-btn" %>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- Formulaire pour ajouter un nouveau commentaire -->
+    <div class="new-comment-form">
+      <h3>Ajouter un commentaire</h3>
+      <%= form_with(model: [@gossip, @comment], url: static_gossip_comments_path(@gossip), method: :post, local: true) do |form| %>
+        <div class="form-group">
+          <%= form.label :content, "Votre commentaire" %>
+          <%= form.text_area :content, class: "comment-textarea" %>
+        </div>
+
+        <div class="button-container">
+          <%= form.submit "Ajouter", class: "btn btn-submit" %>
+        </div>
+      <% end %>
     </div>
   </body>
 </html>

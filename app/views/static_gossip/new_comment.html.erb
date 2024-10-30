@@ -1,0 +1,11 @@
+<h2>Ajouter un commentaire</h2>
+
+<%= form_with(url: static_gossip_comments_path(@gossip), method: :post) do |form| %>
+  <div>
+    <%= form.label :content, "Votre commentaire" %>
+    <%= form.text_area :content %>
+  </div>
+  <div>
+    <%= form.submit "Ajouter le commentaire" %>
+  </div>
+<% end %>
