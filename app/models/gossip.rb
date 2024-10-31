@@ -15,8 +15,11 @@ class Gossip < ApplicationRecord
   has_many :tags, through: :gossip_tags
 
   # Associe un potin à plusieurs commentaires
-  has_many :comments
+  has_many :comments, dependent: :destroy 
+  #l'option dependent: :destroy sur l'association avec les commentaires :
+  #configure Rails pour supprimer automatiquement les commentaires associés lorsqu'un potin est supprimé
 
   # Associe un potin à plusieurs likes
   has_many :likes
 end
+

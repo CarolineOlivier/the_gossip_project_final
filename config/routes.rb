@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # La requête est dirigée vers l'action "welcome" dans le contrôleur "StaticWelcomeController".
 
   #  route personnalisée pour static_gossip :
-get 'static_gossip/gossip/:id', to: 'static_gossip#gossip', as: 'static_gossip'
+  get 'static_gossip/gossip/:id', to: 'static_gossip#gossip', as: 'static_gossip'
 # l'option as: 'static_gossip', définit un alias pour cette route.
 #En utilisant as: 'static_gossip', on peut  faire référence à cette route plus facilement dans le code, 
 #en utilisant static_gossip_path dans les vues ou contrôleurs pour générer l'URL.
@@ -53,16 +53,33 @@ get 'static_gossip/gossip/:id', to: 'static_gossip#gossip', as: 'static_gossip'
   #ajout de commentaires : 
   post 'static_gossip/gossip/:id/comments', to: 'static_gossip#create_comment', as: 'static_gossip_comments'
   
+  #  ligne pour utiliser la méthode destroy dans StaticGossipController
+  delete 'static_gossip/:id', to: 'static_gossip#destroy', as: 'static_gossip_destroy'
 
-  resources :gossips do
-    resources :comments, only: [:create, :destroy]
+# Route pour afficher la liste de tous les potins, limitée à l'action :index
+resources :gossips, only: [:index]
+
+# Route pour gérer les actions liées aux potins individuels, via le contrôleur `StaticGossipController`
+resources :static_gossip, only: [:show] do
+  # Définition d'une route personnalisée pour l'action :destroy, permettant de supprimer un potin
+  # Cette route est accessible via static_gossip_destroy_path(@gossip) dans les vues et utilise la méthode HTTP DELETE
+  member do
+    delete :destroy  # Route pour supprimer un potin
   end
-  
+
+  # Création des routes imbriquées pour les commentaires sur les potins
+  # Le contrôleur `comments` est spécifié pour gérer les actions :create et :destroy des commentaires
+  # Les commentaires sont liés à des potins spécifiques, créant une relation de type `nested resource`
+  resources :comments, only: [:create, :destroy], controller: 'comments'
+end
+
+
 resources :gossips
   # Cette ligne crée automatiquement toutes les routes RESTful (index, show, new, edit, create, update, destroy) pour le modèle "Gossip".
   # Elle dirige ces actions vers "GossipsController", ce qui simplifie la gestion des requêtes CRUD pour ce modèle.
   #Ce code imbrique les routes de comments sous gossips, ce qui signifie qu'un commentaire est lié à un gossip spécifique.
 end
+
 
 
 

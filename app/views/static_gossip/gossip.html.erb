@@ -11,8 +11,11 @@
           <p class="infogossip"><%= @gossip.user.first_name %></p>
         </div>
         <p>#<%= @gossip.id %> </p>
+        <p class="textgossip"><%= @gossip.content %></p>
+
+        <!-- Bouton de suppression du potin avec confirmation -->
+        <%= button_to "Supprimer ce potin", static_gossip_destroy_path(@gossip), method: :delete, data: { confirm: "Es-tu sûr de vouloir supprimer ce potin ?" }, class: "btn delete-btn" %>
       </div>
-      <p class="textgossip"><%= @gossip.content %></p>
     </div>
 
     <!-- Section des commentaires -->
@@ -23,8 +26,8 @@
       <% @comments.each do |comment| %>
         <div class="comment">
           <p><strong><%= comment.user.first_name %> :</strong> <%= comment.content %></p>
-          <!-- Bouton de suppression avec confirmation, visible uniquement sur la page de détails -->
-          <%= button_to "Supprimer", gossip_comment_path(comment.gossip, comment), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer ce commentaire ?" }, class: "btn delete-btn" %>
+          <!-- Bouton de suppression du commentaire avec confirmation -->
+          <%= button_to "Supprimer", static_gossip_comment_path(comment.gossip, comment), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer ce commentaire ?" }, class: "btn delete-btn" %>
         </div>
       <% end %>
     </div>
