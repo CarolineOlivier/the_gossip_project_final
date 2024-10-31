@@ -106,15 +106,15 @@ h2 {
 }
 
 .textgossip {
-    color: #FFFFFF;
-    font-size: 20px;
-    background-color: rgb(18, 18, 18);
-    height: 70px;
-    border-radius: 15px;
-    width: 90%;
-    padding: 20px;
-    margin: 20px auto 0;
-    letter-spacing: -1px;
+    color: #FFFFFF; /* Définit la couleur du texte en blanc */
+    font-size: 20px; /* Définit la taille du texte à 20 pixels */
+    background-color: rgb(18, 18, 18); /* Définit la couleur de fond en gris très foncé */
+    height: 50px; /* Définit une hauteur fixe de 70 pixels pour l'élément */
+    border-radius: 15px; /* Arrondit les coins de l'élément avec un rayon de 15 pixels */
+    width: 90%; /* Définit la largeur de l'élément à 90% de la largeur de son conteneur parent */
+    padding: 20px; /* Ajoute un espace intérieur de 20 pixels autour du contenu de l'élément */
+    margin: 30px auto 0; /* Ajoute une marge de 20 pixels en haut et centre l'élément horizontalement avec auto */
+    letter-spacing: -1px; /* Réduit l'espacement entre les lettres de 1 pixel */
 }
 
 .infogossip {
@@ -122,7 +122,27 @@ h2 {
     text-decoration: none;
 }
 
-.btn  {
+.city-info {
+    font-size: 0.9em; /* Définit la taille du texte à 1,2 fois la taille par défaut de l'élément parent */
+    color: #555; /* Définit la couleur du texte en gris (#555) */
+    margin-top: 30px; /* Ajoute un espace de (nbre) pixels au-dessus de l'élément pour le séparer de l'élément précédent */
+    margin-bottom: 20px;
+    text-align:end; 
+    
+}
+
+.gossip-id-container {
+    position: relative;
+    margin-left: 30px; /* Distance de décalage souhaitée sur la gauche */
+    margin-bottom: 20px; /* Ajoute une distance sous l'ID pour l'éloigner du contenu */
+}
+
+.gossip-id {
+    font-size: 20px;
+    color: #aaa;
+    font-weight: bold;
+}
+.btn  { /*contrôle le bouton ajouter un commentaire*/
     font-size: 16px;
     color: #FFFFFF;
     background: linear-gradient(30deg, #474747ce, #3c3c3cd7, #999999cb); /* Gris métallisé */
@@ -135,7 +155,7 @@ h2 {
     font-weight: bold;
 }
 
-/* Spécifiquement pour centrer le bouton de soumission */
+/* Spécifiquement pour centrer le bouton de soumission du commentaire */
 .button-container {
     display: flex;
     justify-content: center;
@@ -146,6 +166,9 @@ h2 {
     width: auto; /* Assure que le bouton s'ajuste au contenu */
 }
 
+.btn-submit:hover {
+    box-shadow: 0 0 15px rgba(112, 112, 112, 0.6); /* Effet de lueur métallique douce pour l'effet au survol*/
+}
 
 .imgusertext {
     display: flex;
@@ -172,14 +195,14 @@ h2 {
 }
 
 .comment {
-    background-color: #333;
+    background-color: #181818;     
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
 }
 
 .comment strong {
-    color: #180671;
+    color: #044b69;
 }
 
 /* Formulaire de nouveau commentaire */
@@ -191,26 +214,33 @@ h2 {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    background-color: #333;
+    background-color: #1b1a1a;
     color: #fff;
     border: none;
 }
 
 /* Style pour le bouton Supprimer */
-.delete-button {
-    font-size: 16px;
-    color: #FFFFFF;
-    background: linear-gradient(30deg, #555555, #777777, #999999); /* Gris foncé pour contraste */
-    border: none;
-    border-radius: 10px;
-    padding: 8px 15px;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease;
-    font-weight: bold;
+.delete-button { 
+    font-size: 16px; /* Définit la taille de la police du texte à l'intérieur du bouton */
+    color: #FFFFFF; /* Définit la couleur du texte en blanc */
+    background: linear-gradient(30deg, #474747ce, #3c3c3cd7, #999999cb); /* Applique un dégradé métallique pour l'arrière-plan du bouton */
+    border: none; /* Supprime la bordure par défaut du bouton */
+    border-radius: 10px; /* Arrondit les coins du bouton avec un rayon de 10 pixels */
+    padding: 8px 15px; /* Ajoute un espacement interne de 8px en haut et en bas, et de 15px à gauche et à droite */
+    text-decoration: none; /* Supprime toute décoration de texte, comme le soulignement, si appliqué */
+    cursor: pointer; /* Change le curseur en "pointeur" lorsque l'utilisateur survole le bouton */
+    transition: box-shadow 0.3s ease; /* Ajoute une transition douce de 0,3 seconde pour l'effet de l'ombre */
+    font-weight: bold; /* Rend le texte du bouton en gras */
 }
 
 .delete-button:hover {
-    box-shadow: 0 0 15px rgba(112, 112, 112, 0.6); /* Effet de lueur métallique douce pour l'effet au survol*/
+    box-shadow: 0 0 15px rgba(112, 112, 112, 0.6); /* Ajoute une ombre douce autour du bouton lorsqu'on le survole, pour un effet de lueur */
 }
 
+/* Conteneur pour centrer uniquement le bouton de suppression */
+.delete-button-wrapper {
+    display: flex; /* Utilise le modèle de mise en page flex pour faciliter le centrage du contenu */
+    justify-content: right; /* Centre le bouton horizontalement à l'intérieur du conteneur */
+    margin-top: 90px; /* Ajoute un espace de 90px au-dessus du conteneur pour positionner le bouton en dessous du contenu précédent */
+}
 

@@ -10,12 +10,19 @@
           <%= image_tag "anonyme.png", class: "imguser", alt: "Image Anonyme" %>
           <p class="infogossip"><%= @gossip.user.first_name %></p>
         </div>
-        <p>#<%= @gossip.id %> </p>
-        <p class="textgossip"><%= @gossip.content %></p>
+        <div class="city-info">
+          <p><strong>Ville :</strong> <%= @gossip.user.city.name %> (<%= @gossip.user.city.zip_code %>)</p>
+        </div>
+        <div class="gossip-id-container">
+        <p class="gossip-id">#<%= @gossip.id %></p>
+</div>
 
-        <!-- Bouton de suppression du potin avec confirmation -->
-        <%= button_to "Supprimer ce potin", static_gossip_destroy_path(@gossip), method: :delete, data: { confirm: "Es-tu sûr de vouloir supprimer ce potin ?" }, class: "btn delete-btn" %>
+        <p class="textgossip"><%= @gossip.content %></p>
       </div>
+      <div class="delete-button-wrapper">
+  <%= button_to "Supprimer ce potin", static_gossip_destroy_path(@gossip), method: :delete, data: { confirm: "Es-tu sûr de vouloir supprimer ce potin ?" }, class: "delete-button" %>
+</div>
+
     </div>
 
     <!-- Section des commentaires -->

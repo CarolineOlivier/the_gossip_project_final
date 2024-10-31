@@ -1,8 +1,9 @@
 class StaticGossipController < ApplicationController
   def gossip
     @gossip = Gossip.find(params[:id])
-    @comments = @gossip.comments.order(created_at: :desc)
+    @comments = @gossip.comments.order(created_at: :desc) || []
     @comment = Comment.new
+    @user_city = @gossip.user.city
   end
   
   def create_comment
