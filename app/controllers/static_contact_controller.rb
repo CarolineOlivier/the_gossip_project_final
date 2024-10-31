@@ -1,6 +1,4 @@
-# app/controllers/static_gossip_controller.rb
-class StaticGossipController < ApplicationController
-
+class StaticContactController < ApplicationController
   def contact
   end
 

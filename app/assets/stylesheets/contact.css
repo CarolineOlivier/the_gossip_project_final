@@ -85,18 +85,17 @@ p {
 
 /* Styles pour le bouton "Envoyer" de la page de contact */
 .btn-submit {
-    font-size: 18px;
-    color: #FFFFFF;
-    background: linear-gradient(30deg, #555555, #777777, #999999); /* Couleurs gris métallisé */
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease;
-    width: 200px;
-    display: block;
+    font-size: 16px; /* Définit la taille de la police du texte à l'intérieur du bouton */
+    color: #FFFFFF; /* Définit la couleur du texte en blanc */
+    background: linear-gradient(30deg, #474747ce, #3c3c3cd7, #999999cb); /* Applique un dégradé métallique pour l'arrière-plan du bouton */
+    border: none; /* Supprime la bordure par défaut du bouton */
+    border-radius: 10px; /* Arrondit les coins du bouton avec un rayon de 10 pixels */
+    padding: 8px 15px; /* Ajoute un espacement interne de 8px en haut et en bas, et de 15px à gauche et à droite */
+    text-decoration: none; /* Supprime toute décoration de texte, comme le soulignement, si appliqué */
+    cursor: pointer; /* Change le curseur en "pointeur" lorsque l'utilisateur survole le bouton */
+    transition: box-shadow 0.3s ease; /* Ajoute une transition douce de 0,3 seconde pour l'effet de l'ombre */
+    font-weight: bold; /* Rend le texte du bouton en gras */
     margin: 20px auto;
-    font-weight: bold;
 }
 
 .btn-submit:hover {
