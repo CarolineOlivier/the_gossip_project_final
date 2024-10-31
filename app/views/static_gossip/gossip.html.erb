@@ -10,21 +10,22 @@
           <%= image_tag "anonyme.png", class: "imguser", alt: "Image Anonyme" %>
           <p class="infogossip"><%= @gossip.user.first_name %></p>
         </div>
-        <div class="city-info">
-          <p><strong>Ville :</strong> <%= @gossip.user.city.name %> (<%= @gossip.user.city.zip_code %>)</p>
-        </div>
-        <div class="gossip-id-container">
-        <p class="gossip-id">#<%= @gossip.id %></p>
+        
+<div class="gossip-id-container">
+<p class="gossip-id">#<%= @gossip.id %></p>
 </div>
-
-        <p class="textgossip"><%= @gossip.content %></p>
       </div>
+       <p class="textgossip"><%= @gossip.content %></p>
+       <div class="city-info">
+       <p><strong>Ville :</strong> <%= @gossip.user.city.name %> (<%= @gossip.user.city.zip_code %>)</p>
+     </div>
+ 
       <div class="delete-button-wrapper">
+      <%= button_to "Éditer ce potin", static_gossip_path(@gossip), class: "edit-button" %>
   <%= button_to "Supprimer ce potin", static_gossip_destroy_path(@gossip), method: :delete, data: { confirm: "Es-tu sûr de vouloir supprimer ce potin ?" }, class: "delete-button" %>
 </div>
 
     </div>
-
     <!-- Section des commentaires -->
     <div class="comments-section">
       <h2 class="comments-title">Commentaires</h2>
@@ -37,6 +38,7 @@
           <%= button_to "Supprimer", static_gossip_comment_path(comment.gossip, comment), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer ce commentaire ?" }, class: "btn delete-btn" %>
         </div>
       <% end %>
+      <p><strong>Nombre de commentaires :</strong> <%= @gossip.comments.count %></p>
     </div>
 
     <!-- Formulaire pour ajouter un nouveau commentaire -->
